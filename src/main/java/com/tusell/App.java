@@ -53,25 +53,36 @@ public class App {
             System.out.println("2. Crear Personatge");
             switch (sc.nextInt()) {
                 case 1:
-                    System.out.println("Quins personatges vols que es coneixin: ");
-                    personatges.getPersonatges().toString();
+                    sc.nextLine();
+
+                    System.out.println("Llista de personatges disponibles:");
+
+                    System.out.println(personatges.getPersonatges());
+
                     System.out.println("Personatge 1(nom): ");
-                    String nomPersonatge = sc.nextLine();
-                    for  (int i = 0; i < personatges.getPersonatges().size(); i++) {
-                        if (personatges.getPersonatges().get(i).getNom() == nomPersonatge){
-                            Personatge p1 =  personatges.getPersonatges().get(i);
-                            System.out.println("Personatge 2(nom): ");
-                            String nomPersonatge2 = sc.nextLine();
-                            for (int j = 0; j < personatges.getPersonatges().size(); j++){
-                                if(personatges.getPersonatges().get(i).getNom() == nomPersonatge2){
-                                    Personatge p2 =  personatges.getPersonatges().get(j);
-                                    event.Coneixer(p1, p2);
-                                }
-                            }
-                        }
+                    String nom1 = sc.nextLine();
+
+                    System.out.println("Personatge 2(nom): ");
+                    String nom2 = sc.nextLine();
+
+                    Personatge p1 = null;
+                    Personatge p2 = null;
+
+
+                    for (Personatge per : personatges.getPersonatges()) {
+                        if (per.getNom().equalsIgnoreCase(nom1)) p1 = per;
+                        if (per.getNom().equalsIgnoreCase(nom2)) p2 = per;
                     }
 
+                    if (p1 != null && p2 != null) {
+                        event.Coneixer(p1, p2);
+                    } else {
+                        System.out.println("No s'ha trobat algun dels personatges.");
+                    }
+                    break;
+
                 case 2:
+                    sc.nextLine();
                     cp.Creacio();
                     break;
             }
