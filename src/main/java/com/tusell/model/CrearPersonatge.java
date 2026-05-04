@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class CrearPersonatge{
 
-    public void Creacio() {
+    public Personatge Creacio() {
 
             Scanner sc = new Scanner(System.in);
             LlistaPersonatges personatges = new LlistaPersonatges();
@@ -42,6 +42,7 @@ public class CrearPersonatge{
             System.out.println("\nPersonatge creat!");
             System.out.println(p);
             personatges.AfegirPersonatge(p);
+            return p;
         }
     }
 

@@ -83,7 +83,7 @@ public class App {
 
                 case 2:
                     sc.nextLine();
-                    cp.Creacio();
+                    personatges.AfegirPersonatge(cp.Creacio());
                     break;
             }
         }
