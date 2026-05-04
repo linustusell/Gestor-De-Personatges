@@ -68,9 +68,13 @@ public class Personatge {
     public void setGenere(GenereEnum genere) {
         this.genere = genere;
     }
+
     @Override
     public String toString() {
-        return nom + " medeix " + altura + ", pesa  " + pes + ", és de color " + color + ", és " + sexualitat + ", és "
-                + personalitat + ", i és " + genere;
+        return nom; // Ara només imprimirà "Linus" o "Mer"
+    }
+
+    public String getDetalls() {
+        return nom + " medeix " + altura + ", pesa " + pes + ", és " + genere + "...";
     }
 }

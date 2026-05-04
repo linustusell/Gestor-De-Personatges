@@ -41,7 +41,7 @@ public class App {
         Personatge p = new Personatge(nom, altura, pes, color, sexualitat, personalitat, genere);
 
         System.out.println("\nPersonatge creat!");
-        System.out.println(p);
+        System.out.println(p.getDetalls());
         personatges.AfegirPersonatge(p);
 
         CrearPersonatge cp = new CrearPersonatge();
@@ -57,7 +57,10 @@ public class App {
 
                     System.out.println("Llista de personatges disponibles:");
 
-                    System.out.println(personatges.getPersonatges());
+                    for (int i = 0; i < personatges.getPersonatges().size(); i++) {
+                        System.out.println(personatges.getPersonatges().get(i).toString());
+                    }
+
 
                     System.out.println("Personatge 1(nom): ");
                     String nom1 = sc.nextLine();

@@ -40,7 +40,7 @@ public class CrearPersonatge{
             Personatge p = new Personatge(nom, altura, pes, color, sexualitat, personalitat, genere);
 
             System.out.println("\nPersonatge creat!");
-            System.out.println(p);
+            System.out.println(p.getDetalls());
             personatges.AfegirPersonatge(p);
             return p;
         }
