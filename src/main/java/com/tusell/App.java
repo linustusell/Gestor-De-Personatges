@@ -1,5 +1,8 @@
 package com.tusell;
 
+import com.tusell.model.CrearPersonatge;
+import com.tusell.model.Events;
+import com.tusell.model.LlistaPersonatges;
 import com.tusell.model.Personatge;
 import com.tusell.model.enums.GenereEnum;
 import com.tusell.model.enums.PersonalitatEnum;
@@ -10,6 +13,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        LlistaPersonatges personatges = new LlistaPersonatges();
 
         System.out.println("Començarem creant un personatge!");
 
@@ -38,7 +42,40 @@ public class App {
 
         System.out.println("\nPersonatge creat!");
         System.out.println(p);
+        personatges.AfegirPersonatge(p);
 
+        CrearPersonatge cp = new CrearPersonatge();
+        Events event = new Events();
+
+        boolean obert = true;
+        while (obert) {
+            System.out.println("1. Fer que dos personatges es coneixin.");
+            System.out.println("2. Crear Personatge");
+            switch (sc.nextInt()) {
+                case 1:
+                    System.out.println("Quins personatges vols que es coneixin: ");
+                    personatges.getPersonatges().toString();
+                    System.out.println("Personatge 1(nom): ");
+                    String nomPersonatge = sc.nextLine();
+                    for  (int i = 0; i < personatges.getPersonatges().size(); i++) {
+                        if (personatges.getPersonatges().get(i).getNom() == nomPersonatge){
+                            Personatge p1 =  personatges.getPersonatges().get(i);
+                            System.out.println("Personatge 2(nom): ");
+                            String nomPersonatge2 = sc.nextLine();
+                            for (int j = 0; j < personatges.getPersonatges().size(); j++){
+                                if(personatges.getPersonatges().get(i).getNom() == nomPersonatge2){
+                                    Personatge p2 =  personatges.getPersonatges().get(j);
+                                    event.Coneixer(p1, p2);
+                                }
+                            }
+                        }
+                    }
+
+                case 2:
+                    cp.Creacio();
+                    break;
+            }
+        }
 
     }
 
