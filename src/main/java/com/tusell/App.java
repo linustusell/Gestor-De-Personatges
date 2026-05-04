@@ -17,7 +17,7 @@ public class App {
         String nom = sc.nextLine();
 
         System.out.println("Perfecte, és HOME o DONA?");
-        GenereEnum genere = GenereEnum.valueOf(sc.nextLine().toUpperCase());
+        GenereEnum genere = GenereEnum.valueOf(sc.nextLine().toLowerCase());
 
         System.out.println("Quant medeix en/la " + nom + "? (en cm)");
         int altura = Integer.parseInt(sc.nextLine());
@@ -28,8 +28,8 @@ public class App {
         System.out.println("De quin color és en/la " + nom + "?");
         String color = sc.nextLine();
 
-        System.out.println("Quina és la seva sexualitat? (HETEROSEXUAL / HOMOSEXUAL / BISEXUAL)");
-        SexualitatEnum sexualitat = SexualitatEnum.valueOf(sc.nextLine().toUpperCase());
+        System.out.println("Quina és la seva sexualitat? (HETEROSEXUAL / GEY)");
+        SexualitatEnum sexualitat = SexualitatEnum.valueOf(sc.nextLine().toLowerCase());
 
         System.out.println("Quina és la seva personalitat? (EXTROVERTIT / INTROVERTIT / ROMANTIC / INDEPENDENT / SERIOS / GELOS)");
         PersonalitatEnum personalitat = PersonalitatEnum.valueOf(sc.nextLine().toUpperCase());
@@ -39,6 +39,7 @@ public class App {
         System.out.println("\nPersonatge creat!");
         System.out.println(p);
 
-        sc.close();
+
     }
+
 }
