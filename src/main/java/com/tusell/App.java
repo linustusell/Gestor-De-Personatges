@@ -75,7 +75,8 @@ public class App {
                     }
 
                     if (p1 != null && p2 != null) {
-                        event.Coneixer(p1, p2);
+                        String resultat = event.Coneixer(p1, p2);
+                        System.out.println(resultat);
                     } else {
                         System.out.println("No s'ha trobat algun dels personatges.");
                     }
