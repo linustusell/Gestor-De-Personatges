@@ -34,10 +34,7 @@ public class App {
         System.out.println("Quina és la seva personalitat? (EXTROVERTIT / INTROVERTIT / ROMANTIC / INDEPENDENT / SERIOS / GELOS)");
         PersonalitatEnum personalitat = PersonalitatEnum.valueOf(sc.nextLine().toUpperCase());
 
-        System.out.println("Quina és la seva imatge? (ruta o nom del fitxer)");
-        String imagePath = sc.nextLine();
-
-        Personatge p = new Personatge(nom, altura, pes, color, imagePath, sexualitat, personalitat, genere);
+        Personatge p = new Personatge(nom, altura, pes, color, sexualitat, personalitat, genere);
 
         System.out.println("\nPersonatge creat!");
         System.out.println(p);

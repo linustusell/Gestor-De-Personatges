@@ -14,13 +14,12 @@ public class Personatge {
     private PersonalitatEnum personalitat;
     private GenereEnum genere;
 
-    public Personatge(String nom, int altura, int pes, String Color, String imagePath, SexualitatEnum sexualitat,
+    public Personatge(String nom, int altura, int pes, String Color, SexualitatEnum sexualitat,
                       PersonalitatEnum personalitat, GenereEnum genere) {
         this.nom = nom;
         this.altura = altura;
         this.pes = pes;
         this.color = Color;
-        this.imagePath = imagePath;
         this.sexualitat = sexualitat;
         this.personalitat = personalitat;
         this.genere = genere;
@@ -50,12 +49,6 @@ public class Personatge {
     }
     public void setColor(String color) {
         this.color = color;
-    }
-    public String getImagePath() {
-        return imagePath;
-    }
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
     }
     public SexualitatEnum getSexualitat() {
         return sexualitat;
