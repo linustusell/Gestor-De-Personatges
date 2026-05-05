@@ -13,6 +13,8 @@ public class Personatge {
     private SexualitatEnum sexualitat;
     private PersonalitatEnum personalitat;
     private GenereEnum genere;
+    private Personatge enamorat;
+    private boolean declarat = false;
 
     public Personatge(String nom, int altura, int pes, String Color, SexualitatEnum sexualitat,
                       PersonalitatEnum personalitat, GenereEnum genere) {
@@ -26,6 +28,18 @@ public class Personatge {
 
     }
 
+    public boolean  isDeclarat() {
+        return declarat;
+    }
+    public void setDeclarat(boolean declarat) {
+        this.declarat = declarat;
+    }
+    public void setEnamorat(Personatge enamorat) {
+        this.enamorat = enamorat;
+    }
+    public Personatge getEnamorat(){
+        return enamorat;
+    }
     public String getNom() {
         return nom;
     }
@@ -71,10 +85,10 @@ public class Personatge {
 
     @Override
     public String toString() {
-        return nom; // Ara només imprimirà "Linus" o "Mer"
+        return nom;
     }
 
     public String getDetalls() {
-        return nom + " medeix " + altura + ", pesa " + pes + ", és " + genere + "...";
+        return nom + " medeix " + altura + ", pesa " + pes + ", és " + genere;
     }
 }
