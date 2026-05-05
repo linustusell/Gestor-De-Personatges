@@ -1,9 +1,6 @@
 package com.tusell;
 
-import com.tusell.model.CrearPersonatge;
-import com.tusell.model.Events;
-import com.tusell.model.LlistaPersonatges;
-import com.tusell.model.Personatge;
+import com.tusell.model.*;
 import com.tusell.model.enums.GenereEnum;
 import com.tusell.model.enums.PersonalitatEnum;
 import com.tusell.model.enums.SexualitatEnum;
@@ -47,11 +44,24 @@ public class App {
 
         CrearPersonatge cp = new CrearPersonatge();
         Events event = new Events();
+        ProbabilitatEvents ep = new ProbabilitatEvents();
 
         boolean obert = true;
         while (obert) {
             System.out.println("1. Fer que dos personatges es coneixin.");
             System.out.println("2. Crear Personatge");
+            Personatge pr1 = null;
+            Personatge pr2 = null;
+            boolean hiHaParella = personatges.getPersonatges().size() >= 2;
+
+            if (hiHaParella) {
+                pr1 = personatges.getPersonatgeRandom();
+                pr2 = personatges.getPersonatgeRandom();
+            }
+            int enamorat;
+            while (hiHaParella && pr1.equals(pr2)) {
+                pr2 = personatges.getPersonatgeRandom();
+            }
             switch (InputUtils.readMenuOption(sc, 1, 2)) {
                 case 1:
                     System.out.println("Llista de personatges disponibles:");
@@ -82,10 +92,24 @@ public class App {
                     } else {
                         System.out.println("No s'ha trobat algun dels personatges.");
                     }
+                    enamorat = hiHaParella ? ep.RondaEvent(pr1, pr2) : 0;
+                    if (enamorat > 0) {
+                        String nomEnamorat = pr1.getNom();
+                        Personatge personatgeEnamorat =  personatges.buscarPersonatge(nomEnamorat);
+                        personatgeEnamorat.setEnamorat(pr2);
+                        System.out.println("Vols que es declari?");
+                    }
                     break;
 
                 case 2:
                     personatges.AfegirPersonatge(cp.Creacio());
+                    enamorat = hiHaParella ? ep.RondaEvent(pr1, pr2) : 0;
+                    if (enamorat > 0) {
+                        String nomEnamorat = pr1.getNom();
+                        Personatge personatgeEnamorat =  personatges.buscarPersonatge(nomEnamorat);
+                        personatgeEnamorat.setEnamorat(pr2);
+                        System.out.println("Vols que es declari?");
+                    }
                     break;
             }
         }

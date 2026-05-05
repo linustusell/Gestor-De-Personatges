@@ -72,66 +72,6 @@ public class Events {
 
     public String Enamorar(Personatge p1, Personatge p2) {
         System.out.println(p1 + " s'enamora de " + p2);
-        PersonalitatEnum a = p1.getPersonalitat();
-        PersonalitatEnum b = p2.getPersonalitat();
-
-        if (a == PersonalitatEnum.INDEPENDENT || b == PersonalitatEnum.INDEPENDENT)
-            return "L'independent no busca parella — no hi ha enamorament.";
-
-        if (a == PersonalitatEnum.GELOS && b == PersonalitatEnum.GELOS)
-            return "Es desconfien mútuament — relació molt inestable.";
-
-        if ((a == PersonalitatEnum.ROMANTIC && b == PersonalitatEnum.GELOS) ||
-                (a == PersonalitatEnum.GELOS && b == PersonalitatEnum.ROMANTIC))
-            return "El romàntic idealitza, el gelós controla — relació tòxica.";
-
-        if ((a == PersonalitatEnum.EXTROVERTIT && b == PersonalitatEnum.GELOS) ||
-                (a == PersonalitatEnum.GELOS && b == PersonalitatEnum.EXTROVERTIT))
-            return "L'extrovertit és social per natura — el gelós entra en crisi.";
-
-        if ((a == PersonalitatEnum.INTROVERTIT && b == PersonalitatEnum.GELOS) ||
-                (a == PersonalitatEnum.GELOS && b == PersonalitatEnum.INTROVERTIT))
-            return "L'introvertit necessita espai, el gelós no el tolera — conflicte.";
-
-        if ((a == PersonalitatEnum.SERIOS && b == PersonalitatEnum.GELOS) ||
-                (a == PersonalitatEnum.GELOS && b == PersonalitatEnum.SERIOS))
-            return "El seriós rebutja la irracionalitat de la gelosia — tensió permanent.";
-
-        if (a == PersonalitatEnum.ROMANTIC && b == PersonalitatEnum.ROMANTIC)
-            return "Relació intensa i apassionada, però pot ser inestable.";
-
-        if ((a == PersonalitatEnum.ROMANTIC && b == PersonalitatEnum.EXTROVERTIT) ||
-                (a == PersonalitatEnum.EXTROVERTIT && b == PersonalitatEnum.ROMANTIC))
-            return "El romàntic s'enganxa més que l'extrovertit — desequilibri emocional.";
-
-        if ((a == PersonalitatEnum.ROMANTIC && b == PersonalitatEnum.SERIOS) ||
-                (a == PersonalitatEnum.SERIOS && b == PersonalitatEnum.ROMANTIC))
-            return "El seriós no pot satisfer les necessitats emocionals del romàntic — incompatibles.";
-
-        if ((a == PersonalitatEnum.ROMANTIC && b == PersonalitatEnum.INTROVERTIT) ||
-                (a == PersonalitatEnum.INTROVERTIT && b == PersonalitatEnum.ROMANTIC))
-            return "El romàntic s'enamora sol — l'introvertit no correspon com s'esperava.";
-
-        if ((a == PersonalitatEnum.INTROVERTIT && b == PersonalitatEnum.EXTROVERTIT) ||
-                (a == PersonalitatEnum.EXTROVERTIT && b == PersonalitatEnum.INTROVERTIT))
-            return "Bona parella — l'extrovertit dona confiança a l'introvertit.";
-
-        if ((a == PersonalitatEnum.INTROVERTIT && b == PersonalitatEnum.SERIOS) ||
-                (a == PersonalitatEnum.SERIOS && b == PersonalitatEnum.INTROVERTIT))
-            return "Relació sòlida però freda — basada en estabilitat, no passió.";
-
-        if (a == PersonalitatEnum.INTROVERTIT && b == PersonalitatEnum.INTROVERTIT)
-            return "S'estimen amb gestos petits — relació tranquil·la i estable.";
-
-        if (a == PersonalitatEnum.EXTROVERTIT && b == PersonalitatEnum.EXTROVERTIT)
-            return "Parella apassionada — molta vida social compartida.";
-
-        if ((a == PersonalitatEnum.EXTROVERTIT && b == PersonalitatEnum.SERIOS) ||
-                (a == PersonalitatEnum.SERIOS && b == PersonalitatEnum.EXTROVERTIT))
-            return "El seriós viu l'extrovertit com irresponsable — ruptura probable.";
-
-        if (a == PersonalitatEnum.SERIOS && b == PersonalitatEnum.SERIOS)
-            return "Relació sòlida però freda — basada en lògica, no passió.";
 
         return "";
     }
